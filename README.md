@@ -35,7 +35,7 @@ This is a template for a single deployment, not a `stage`/`prod` layout. A repos
 
 ### 1. Create your repository from this template
 
-After this repository is published and marked as a GitHub template, select **Use this template** to create a new repository. Then clone your new repository.
+Select **Use this template** on this repository's GitHub page to create a new repository, then clone your new repository.
 
 ### 2. Prepare Azure
 
