@@ -16,6 +16,8 @@ The modules are pinned to `v0.1.0`. The VM size is `Standard_D2s_v7`. Check that
 
 This is a template for a single deployment, not a `stage`/`prod` layout. A repository created from this template must have its own Azure backend and GitHub OIDC configuration.
 
+The reusable network and web server modules each have their own basic Azure example and mocked unit tests in their module repositories. This repository also tests that the two pinned modules compose and expose the expected deployment outputs.
+
 ## Repository contents
 
 ```text
@@ -26,6 +28,8 @@ This is a template for a single deployment, not a `stage`/`prod` layout. A repos
 ├── backend.tf
 ├── main.tf
 ├── outputs.tf
+├── tests/
+│   └── deployment.tftest.hcl
 ├── terraform.tfvars.example
 ├── variables.tf
 └── versions.tf
@@ -104,9 +108,10 @@ From the repository root:
 terraform init -backend=false
 terraform fmt -check -recursive
 terraform validate
+terraform test
 ```
 
-For an actual plan, initialize the configured Azure backend and authenticate with an identity that has access to both the state container and deployment resources. Do not commit state files or saved plans.
+`terraform test` requires Terraform 1.7.0 or later and uses a mocked AzureRM provider; it does not create Azure resources. For an actual plan, initialize the configured Azure backend and authenticate with an identity that has access to both the state container and deployment resources. Do not commit state files or saved plans.
 
 ## Cost and security
 
