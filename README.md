@@ -5,7 +5,7 @@ A starter repository for deploying a small web server to Azure with Terraform. I
 - [`terraform-module-azurerm-network`](https://github.com/Terraformcristianrdgzzz/terraform-module-azurerm-network) creates a virtual network and subnet.
 - [`terraform-module-azurerm-linux-webserver`](https://github.com/Terraformcristianrdgzzz/terraform-module-azurerm-linux-webserver) creates a Linux VM, public IP, network security group, and Apache.
 
-The modules are pinned to `v0.2.0`, which includes resource preconditions and postconditions. The VM size is `Standard_D2s_v7`. Check that the size is available and review its cost in your Azure region before deployment.
+The network module is pinned to `v0.2.0` and the web server module to `v0.2.1`; these versions include resource preconditions and postconditions. The web server module's `v0.2.1` uses the Ubuntu 22.04 Gen2 image compatible with the fixed VM size `Standard_D2s_v7`. Check that the size is available and review its cost in your Azure region before deployment.
 
 ## What this template does
 
